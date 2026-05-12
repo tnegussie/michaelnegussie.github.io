@@ -4,162 +4,170 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>michaelnegussie.com</title>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300&display=swap" rel="stylesheet">
   <style>
-    .hero {
-      padding: 6rem 4rem 5rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: end;
-      min-height: 72vh;
-      border-bottom: 1px solid var(--rule);
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .hero-text h1 {
-      font-family: var(--font-display);
-      font-size: clamp(3.2rem, 7vw, 6rem);
-      font-weight: 300;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin-bottom: 2rem;
-    }
-
-    .hero-text h1 em {
-      font-style: italic;
-      color: var(--warm-mid);
-    }
-
-    .hero-text p {
-      font-size: 1rem;
-      line-height: 1.85;
-      color: #4a453f;
-      max-width: 440px;
-      margin-bottom: 2rem;
-    }
-
-    .hero-image-block {
-      position: relative;
-    }
-
-    .hero-image-block img {
+    html, body {
+      height: 100%;
       width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      display: block;
-      filter: grayscale(10%);
     }
 
-    .hero-label {
+    body {
+      background: #0a0e14;
+    }
+
+    .scene {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 560px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .bg {
       position: absolute;
-      bottom: -1px;
+      inset: 0;
+      background-image: url('assets/ashenafi_abebe.png');
+      background-size: cover;
+      background-position: center 30%;
+      opacity: 0.82;
+      filter: saturate(1.15);
+    }
+
+    .vignette {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 30%, rgba(8,12,18,0.72) 100%);
+    }
+
+    .vignette-bottom {
+      position: absolute;
+      bottom: 0;
       left: 0;
       right: 0;
-      background: var(--cream);
-      border-top: 1px solid var(--rule);
-      padding: 0.75rem 1rem;
-      font-family: var(--font-ui);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
+      height: 55%;
+      background: linear-gradient(to top, rgba(8,12,18,0.9) 0%, transparent 100%);
+    }
+
+    .top {
+      position: relative;
+      z-index: 2;
+      padding: 2.5rem 3rem;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .top-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 200;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--warm-mid);
-    }
-
-    .nav-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .nav-strip-item {
-      padding: 2.5rem 4rem;
-      border-right: 1px solid var(--rule);
+      color: rgba(255,255,255,0.45);
       text-decoration: none;
-      transition: background 0.2s;
     }
 
-    .nav-strip-item:last-child { border-right: none; }
-    .nav-strip-item:hover { background: rgba(0,0,0,0.02); }
+    .bottom {
+      position: relative;
+      z-index: 2;
+      padding: 3rem;
+    }
 
-    .nav-strip-item .label {
-      font-family: var(--font-ui);
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--warm-mid);
+    .name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 7vw, 5rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.0;
+      color: rgba(255,255,255,0.95);
       margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
     }
 
-    .nav-strip-item .title {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: var(--ink);
+    .subtitle {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 200;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 2rem;
     }
 
-    @media (max-width: 768px) {
-      .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 3rem; min-height: auto; }
-      .nav-strip { grid-template-columns: 1fr 1fr; }
-      .nav-strip-item { padding: 1.5rem; }
-      .nav-strip-item:nth-child(2n) { border-right: none; }
-      .nav-strip-item:nth-child(n+3) { border-top: 1px solid var(--rule); }
+    .nav {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav a:hover { color: rgba(255,255,255,0.95); }
+
+    .credit {
+      position: absolute;
+      bottom: 3rem;
+      right: 3rem;
+      z-index: 2;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 200;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.2);
+      text-align: right;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .top { padding: 1.5rem; }
+      .bottom { padding: 1.5rem; }
+      .credit { right: 1.5rem; bottom: 1.5rem; }
+      .nav { gap: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a class="nav-brand" href="index.html">michaelnegussie.com</a>
-    <ul class="nav-links">
-      <li><a href="passions.html">Passions</a></li>
-      <li><a href="foundations.html">Foundations</a></li>
-      <li><a href="blog/index.html">Blog</a></li>
-      <li><a href="press.html">Press</a></li>
-    </ul>
-  </nav>
+  <div class="scene">
+    <div class="bg"></div>
+    <div class="vignette"></div>
+    <div class="vignette-bottom"></div>
 
-  <main>
-    <section class="hero">
-      <div class="hero-text">
-        <h1>Michael<br><em>Negussie</em></h1>
-        <p>Scholar, organizer, and storyteller working at the intersection of colonial education, Ethiopian intellectual history, and liberatory pedagogy.</p>
-        <a class="link-arrow" href="foundations.html">Foundations</a>
-      </div>
-      <div class="hero-image-block">
-        <img src="https://images.squarespace-cdn.com/content/v1/6735cecd4d31a94f82cd7547/09a4441c-80c1-4aeb-94cf-38e08d444e0e/IMG_5054-2.jpg" alt="Michael Negussie">
-        <div class="hero-label">MA Candidate, Global Thought · Columbia University</div>
-      </div>
-    </section>
+    <div class="top">
+      <a class="top-label" href="index.html">michaelnegussie.com</a>
+    </div>
 
-    <div class="nav-strip">
-      <a class="nav-strip-item" href="passions.html">
-        <div class="label">Work</div>
-        <div class="title">Passions</div>
-      </a>
-      <a class="nav-strip-item" href="foundations.html">
-        <div class="label">Philosophy</div>
-        <div class="title">Foundations</div>
-      </a>
-      <a class="nav-strip-item" href="blog/index.html">
-        <div class="label">Writing</div>
-        <div class="title">Blog</div>
-      </a>
-      <a class="nav-strip-item" href="press.html">
-        <div class="label">Coverage</div>
-        <div class="title">Press</div>
-      </a>
+    <div class="bottom">
+      <h1 class="name">Michael Negussie</h1>
+      <p class="subtitle">Scholar &amp; Social Entrepreneur</p>
+      <ul class="nav">
+        <li><a href="passions.html">Passions</a></li>
+        <li><a href="foundations.html">Philosophy</a></li>
+        <li><a href="blog/index.html">Writing</a></li>
+        <li><a href="press.html">Coverage</a></li>
+      </ul>
     </div>
-  </main>
 
-  <footer>
-    <div>
-      <div class="footer-brand">michaelnegussie.com</div>
+    <div class="credit">
+      Artwork — Ashenafi Abebe
     </div>
-    <div class="footer-contact">
-      <a href="mailto:michael@didomigives.com">michael@didomigives.com</a><br>
-      +1 (832) 863-7930
-    </div>
-  </footer>
+  </div>
 
 </body>
 </html>
