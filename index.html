@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>michaelnegussie.com</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .hero {
+      padding: 6rem 4rem 5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: end;
+      min-height: 72vh;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .hero-text h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 7vw, 6rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+
+    .hero-text h1 em {
+      font-style: italic;
+      color: var(--warm-mid);
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: #4a453f;
+      max-width: 440px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-image-block {
+      position: relative;
+    }
+
+    .hero-image-block img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(10%);
+    }
+
+    .hero-label {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      background: var(--cream);
+      border-top: 1px solid var(--rule);
+      padding: 0.75rem 1rem;
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warm-mid);
+    }
+
+    .nav-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-strip-item {
+      padding: 2.5rem 4rem;
+      border-right: 1px solid var(--rule);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .nav-strip-item:last-child { border-right: none; }
+    .nav-strip-item:hover { background: rgba(0,0,0,0.02); }
+
+    .nav-strip-item .label {
+      font-family: var(--font-ui);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--warm-mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-strip-item .title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--ink);
+    }
+
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 3rem; min-height: auto; }
+      .nav-strip { grid-template-columns: 1fr 1fr; }
+      .nav-strip-item { padding: 1.5rem; }
+      .nav-strip-item:nth-child(2n) { border-right: none; }
+      .nav-strip-item:nth-child(n+3) { border-top: 1px solid var(--rule); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="index.html">michaelnegussie.com</a>
+    <ul class="nav-links">
+      <li><a href="passions.html">Passions</a></li>
+      <li><a href="foundations.html">Foundations</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="press.html">Press</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Michael<br><em>Negussie</em></h1>
+        <p>Scholar, organizer, and storyteller working at the intersection of colonial education, Ethiopian intellectual history, and liberatory pedagogy.</p>
+        <a class="link-arrow" href="foundations.html">Foundations</a>
+      </div>
+      <div class="hero-image-block">
+        <img src="https://images.squarespace-cdn.com/content/v1/6735cecd4d31a94f82cd7547/09a4441c-80c1-4aeb-94cf-38e08d444e0e/IMG_5054-2.jpg" alt="Michael Negussie">
+        <div class="hero-label">MA Candidate, Global Thought · Columbia University</div>
+      </div>
+    </section>
+
+    <div class="nav-strip">
+      <a class="nav-strip-item" href="passions.html">
+        <div class="label">Work</div>
+        <div class="title">Passions</div>
+      </a>
+      <a class="nav-strip-item" href="foundations.html">
+        <div class="label">Philosophy</div>
+        <div class="title">Foundations</div>
+      </a>
+      <a class="nav-strip-item" href="blog/index.html">
+        <div class="label">Writing</div>
+        <div class="title">Blog</div>
+      </a>
+      <a class="nav-strip-item" href="press.html">
+        <div class="label">Coverage</div>
+        <div class="title">Press</div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <div class="footer-brand">michaelnegussie.com</div>
+    </div>
+    <div class="footer-contact">
+      <a href="mailto:michael@didomigives.com">michael@didomigives.com</a><br>
+      +1 (832) 863-7930
+    </div>
+  </footer>
+
+</body>
+</html>

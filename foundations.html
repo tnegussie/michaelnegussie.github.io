@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundations — michaelnegussie.com</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    .foundations-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      min-height: calc(100vh - 73px);
+    }
+
+    .foundations-left {
+      padding: 5rem 4rem;
+      border-right: 1px solid var(--rule);
+    }
+
+    .lede {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.4;
+      max-width: 600px;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .principles { max-width: 620px; }
+
+    .foundations-right {
+      padding: 5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .foundations-right img {
+      width: 100%;
+      display: block;
+      filter: grayscale(15%);
+    }
+
+    .image-caption {
+      font-family: var(--font-ui);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--warm-mid);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .foundations-layout { grid-template-columns: 1fr; }
+      .foundations-left { padding: 3rem 1.5rem; border-right: none; }
+      .foundations-right { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="index.html">michaelnegussie.com</a>
+    <ul class="nav-links">
+      <li><a href="passions.html">Passions</a></li>
+      <li><a href="foundations.html" class="active">Foundations</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="press.html">Press</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="foundations-layout">
+      <div class="foundations-left">
+        <p class="lede">A <em>system</em> is something that reproduces itself. Everything I create is meant to become its own system, outliving me and continuing to inspire, transform, and grow.</p>
+
+        <div class="principles">
+          <p style="margin-bottom: 2.5rem; font-size: 0.97rem; color: #4a453f; line-height: 1.85;">These efforts are rooted in two principles: <em>representation is constitutive</em> and <em>meaning is constructed</em>.</p>
+
+          <div class="principle">
+            <h3>Representation is Constitutive</h3>
+            <p>Representation shapes the fabric of reality itself. It forms the structures through which we understand ourselves and the world.</p>
+          </div>
+
+          <div class="principle">
+            <h3>Meaning is Constructed</h3>
+            <p>Meaning emerges through relationships, culture, and context. It is an ongoing process of creation that transforms how we interpret and interact with the world.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="foundations-right">
+        <img src="https://images.squarespace-cdn.com/content/v1/6735cecd4d31a94f82cd7547/38f2c615-fd19-478e-9971-c453a602253a/1991.173_print.jpg" alt="">
+        <p class="image-caption">Daniel Twafe, <em>Three Faces of Africa</em></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <div class="footer-brand">michaelnegussie.com</div>
+    </div>
+    <div class="footer-contact">
+      <a href="mailto:michael@didomigives.com">michael@didomigives.com</a><br>
+      +1 (832) 863-7930
+    </div>
+  </footer>
+
+</body>
+</html>
